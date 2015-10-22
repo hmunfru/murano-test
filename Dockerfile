@@ -16,4 +16,6 @@ RUN git clone https://github.com/openstack/tempest /opt/murano/tempest
 WORKDIR /opt/murano/tempest
 RUN pip install -r requirements.txt
 RUN python setup.py install
-CMD sed -i -e "s/XXX/${PASSWORD}/" /etc/tempest/tempest.conf; nosetests /opt/murano/murano/tests/functional/api/v1 
+WORKDIR /opt/murano
+COPY start.sh /opt/murano/start.sh
+CMD ./start.sh; nosetests /opt/murano/murano/tests/functional/api/v1 
