@@ -16,4 +16,5 @@ RUN pip install -r test-requirements.txt
 RUN pip install -r requirements.txt
 RUN python setup.py install
 COPY start.sh /opt/murano/start.sh
+COPY tempest.conf /etc/tempest/tempest.conf
 CMD ./start.sh; nosetests /opt/murano/murano/tests/functional/api/v1 
