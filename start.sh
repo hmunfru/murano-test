@@ -8,6 +8,7 @@ echo "$ip murano.lab.fiware.org" >> /etc/hosts
 cat /etc/hosts
 curl http://$ip:8082
 who -m
+ls -l
 cd /test
 ls -l
 echo "hola" >> /test/hola
