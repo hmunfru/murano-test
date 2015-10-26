@@ -8,7 +8,7 @@ echo "$ip murano.lab.fiware.org" >> /etc/hosts
 cat /etc/hosts
 curl http://$ip:8082
 who -m
-cd /opt/test
+cd /test
 ls -l
-echo "hola" >> /opt/test/hola
+echo "hola" >> /test/hola
 sed -i -e "s/XXX/${PASSWORD}/" /etc/tempest/tempest.conf
